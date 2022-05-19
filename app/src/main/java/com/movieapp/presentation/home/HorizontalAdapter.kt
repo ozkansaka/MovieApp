@@ -2,6 +2,7 @@ package com.movieapp.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.movieapp.databinding.ItemHorizontalBinding
 import com.movieapp.domain.model.Home
@@ -23,8 +24,12 @@ class HorizontalAdapter(dataList: List<Home>) : RecyclerView.Adapter<HorizontalA
 
     class ViewHolder(private val binding: ItemHorizontalBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Home) {
-            item.image?.let { binding.horizontalImage.loadImage("https://image.tmdb.org/t/p/w500$it") }
+            item.poster?.let { binding.horizontalImage.loadImage("https://image.tmdb.org/t/p/w500$it") }
             binding.horizontalTitle.text = item.title
+            binding.horizontalImdb.text = item.imdb
+            binding.horizontalImage.setOnClickListener{
+                it.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(item.id))
+            }
 
         }
 

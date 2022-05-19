@@ -27,19 +27,31 @@ class GetHomeUseCase @Inject constructor(
                 arrayListOf(
                     HomeTypeModel.Title(
                         title = "Popular"
-                    ), HomeTypeModel.Horizontal(
+                    ),
+                    HomeTypeModel.Horizontal(
                         data = popular
-                    ), HomeTypeModel.Title(
+                    ),
+                    HomeTypeModel.Title(
                         title = "Top Rated"
-                    ), HomeTypeModel.Horizontal(
+                    ),
+                    HomeTypeModel.Horizontal(
                         data = topRated
-                    ), HomeTypeModel.Title(
+                    ),
+                    HomeTypeModel.Title(
                         title = "Upcoming"
-                    ), HomeTypeModel.Vertical(
-                        data = upcoming
-                    )
+                    ),
                 )
             )
+            for (i in upcoming) {
+                listData.add(
+                    HomeTypeModel.Vertical(
+                        id = i.id,
+                        title = i.title,
+                        image = i.image
+                    )
+                )
+
+            }
 
             emit(Resource.Success((listData)))
         } catch (e: HttpException) {

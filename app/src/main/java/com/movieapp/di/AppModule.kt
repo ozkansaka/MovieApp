@@ -2,7 +2,9 @@ package com.movieapp.di
 
 import com.movieapp.common.Constants
 import com.movieapp.data.remote.MovieApi
+import com.movieapp.data.repository.DetailRepositoryImp
 import com.movieapp.data.repository.HomeRepositoryImp
+import com.movieapp.domain.repository.DetailRepository
 import com.movieapp.domain.repository.HomeRepository
 import com.squareup.picasso.Picasso
 import dagger.Module
@@ -48,6 +50,12 @@ object AppModule {
     @Singleton
     fun provideHomeRepository(api: MovieApi): HomeRepository {
         return HomeRepositoryImp(api)
+    }
+
+    @Provides
+    @Singleton
+    fun provideDetailRepository(api: MovieApi): DetailRepository {
+        return DetailRepositoryImp(api)
     }
 
     @Provides

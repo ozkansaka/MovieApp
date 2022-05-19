@@ -4,5 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logo">logo</string>
     <string name="ozkaflix">OzkaFlix</string>
-    <string name="textview">TextView</string>
+    <string name="lorem_ipsum">Lores Ipsum</string>
+    <string name="banner">banner</string>
+    <string name="about">About</string>
 </resources>

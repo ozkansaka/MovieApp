@@ -3,12 +3,15 @@ package com.movieapp.presentation.home
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.movieapp.R
 import com.movieapp.databinding.ItemChildBinding
 import com.movieapp.databinding.ItemTitleBinding
+import com.movieapp.databinding.ItemVerticalBinding
 import com.movieapp.domain.model.HomeTypeModel
+import com.movieapp.extensions.loadImage
 
 class HomeAdapter(private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -33,11 +36,13 @@ class HomeAdapter(private val context: Context) : RecyclerView.Adapter<RecyclerV
         }
     }
 
-    inner class VerticalHolder(private val binding: ItemChildBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class VerticalHolder(private val binding: ItemVerticalBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(content: HomeTypeModel.Vertical) {
-            val childAdapter = VerticalAdapter(content.data)
-            binding.childRecyclerView.adapter = childAdapter
-            binding.childRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            binding.verticalTitle.text = content.title
+            content.image?.let { binding.verticalImage.loadImage("https://image.tmdb.org/t/p/w500$it") }
+            binding.verticalImage.setOnClickListener{
+                it.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(content.id))
+            }
         }
     }
 
@@ -51,7 +56,7 @@ class HomeAdapter(private val context: Context) : RecyclerView.Adapter<RecyclerV
             )
 
             R.layout.item_vertical -> VerticalHolder(
-                ItemChildBinding.inflate(layoutInflater, parent, false)
+                ItemVerticalBinding.inflate(layoutInflater, parent, false)
             )
 
             else -> TitleViewHolder(

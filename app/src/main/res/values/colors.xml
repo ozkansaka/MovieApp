@@ -7,9 +7,13 @@
     <color name="teal_700">#FF018786</color>
 
 
-    <color name="black">#191919</color>
-    <color name="blue">#2D4263</color>
-    <color name="orange">#C84B31</color>
-    <color name="white">#ECDBBA</color>
+    <color name="black">#131313</color>393E46
+    <color name="blue">#1E2022</color>
+    <color name="red">#FF0000</color>
+    <color name="white">#F0F5F9</color>
+    <color name="gray">#ECDBBA</color>
+
+
+    <color name="transparent_black">#BE191919</color>
 
 </resources>

@@ -37,8 +37,13 @@ class HomeFragment : Fragment() {
                 when {
                     uiState.home.isNotEmpty() -> {
                         adapter.data = uiState.home
+                        binding.homeProgressBar.visibility = View.GONE
+
                     }
-                    uiState.isLoading -> {}
+                    uiState.isLoading -> {
+                        binding.homeProgressBar.visibility = View.VISIBLE
+
+                    }
                     uiState.error.isNotEmpty() -> {}
                 }
             }

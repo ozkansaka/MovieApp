@@ -1,6 +1,9 @@
 package com.movieapp.domain.model
 
 data class Home(
-    val title:String?,
+    val id: Int,
+    val title: String?,
+    val imdb:String?,
     val image: String?,
+    val poster:String?,
 )

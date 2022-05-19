@@ -7,12 +7,12 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp"
-    android:paddingBottom="30dp">
+    android:paddingBottom="10dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/horizontal_image"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="180dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,33 +20,35 @@
         app:shapeAppearanceOverlay="@style/roundImageView"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/horizontal_filter"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:adjustViewBounds="true"
-        android:alpha="0.4"
-        android:background="@drawable/image_overlay"
-        app:layout_constraintBottom_toBottomOf="@+id/horizontal_image"
-        app:layout_constraintEnd_toEndOf="@+id/horizontal_image"
-        app:layout_constraintStart_toStartOf="@+id/horizontal_image"
-        app:layout_constraintTop_toTopOf="@id/horizontal_image"
-        app:shapeAppearanceOverlay="@style/roundImageView" />
-
     <TextView
         android:id="@+id/horizontal_title"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
         android:fontFamily="@font/helvetica"
-        android:text="@string/textview"
+        android:text="@string/lorem_ipsum"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/horizontal_image"
         app:layout_constraintEnd_toEndOf="@id/horizontal_image"
-        app:layout_constraintStart_toStartOf="@+id/horizontal_image" />
+        app:layout_constraintStart_toStartOf="@+id/horizontal_image"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_image" />
+
+    <TextView
+        android:id="@+id/horizontal_imdb"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/shape_imdb"
+        android:fontFamily="@font/helvetica_bold"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="7.8"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
