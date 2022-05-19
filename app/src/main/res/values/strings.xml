@@ -7,4 +7,7 @@
     <string name="lorem_ipsum">Lores Ipsum</string>
     <string name="banner">banner</string>
     <string name="about">About</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="categories">Categories</string>
 </resources>

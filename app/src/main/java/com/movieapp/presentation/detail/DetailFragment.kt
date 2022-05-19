@@ -13,6 +13,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.movieapp.R
 import com.movieapp.databinding.FragmentDetailBinding
 import com.movieapp.extensions.loadImage
@@ -28,8 +30,11 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        val navBar: BottomNavigationView = requireActivity().findViewById(R.id.bottomBar)
+        navBar.visibility = View.GONE
+
         val binding = FragmentDetailBinding.inflate(inflater)
-        Log.e("a", args.movieId.toString())
+
         viewModel.movieId = args.movieId
         viewModel.run()
 
@@ -52,7 +57,6 @@ class DetailFragment : Fragment() {
                         for (i in uiState.detail[0].genres) {
                             binding.genresContainer.addView(getGenres(i.name))
                         }
-
                     }
                     uiState.isLoading -> {
                         binding.progressBar.visibility = View.VISIBLE

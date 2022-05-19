@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.movieapp.R
 import com.movieapp.databinding.FragmentHomeBinding
 import com.movieapp.domain.model.Home
 import com.movieapp.domain.model.HomeTypeModel
@@ -24,8 +27,11 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentHomeBinding.inflate(inflater)
 
+        val navBar: BottomNavigationView = requireActivity().findViewById(R.id.bottomBar)
+        navBar.visibility = View.VISIBLE
+
+        val binding = FragmentHomeBinding.inflate(inflater)
 
         val adapter = HomeAdapter(requireContext())
         val recyclerView = binding.recyclerView
@@ -51,6 +57,7 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
+
 
 
 }
