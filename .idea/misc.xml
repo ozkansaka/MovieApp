@@ -13,9 +13,11 @@
         <entry key="app/src/main/res/drawable/shape_imdb.xml" value="0.1305" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.3037037037037037" />
+        <entry key="app/src/main/res/layout/fragment_category_detail.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2835897435897436" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.3037037037037037" />
+        <entry key="app/src/main/res/layout/item_category_detail.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_child.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_genres.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_horizontal.xml" value="0.3037037037037037" />

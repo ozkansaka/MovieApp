@@ -3,6 +3,7 @@ package com.movieapp.data.remote
 import com.movieapp.data.remote.dto.MovieResponseDto
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface MovieApi {
 
@@ -18,6 +19,10 @@ interface MovieApi {
     @GET("/3/movie/{id}?api_key=e2c019e3bbc9049df7b03972b44ff529")
     suspend fun getMovieDetail(@Path("id") id: Int): MovieResponseDto
 
-    @GET("3/genre/movie/list?api_key=e2c019e3bbc9049df7b03972b44ff529")
+    @GET("/3/genre/movie/list?api_key=e2c019e3bbc9049df7b03972b44ff529")
     suspend fun getCategories(): MovieResponseDto
+
+    @GET("/3/discover/movie?api_key=e2c019e3bbc9049df7b03972b44ff529")
+    suspend fun getCategoryDetail(@Query("with_genres") id: Int): MovieResponseDto
+
 }

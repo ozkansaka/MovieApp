@@ -21,6 +21,9 @@ class CategoriesAdapter : ListAdapter<Categories, CategoriesAdapter.CategoriesVi
         fun bind(content: Categories) {
 
             binding.categoryTitle.text = content.name
+            binding.categoryTitle.setOnClickListener {
+                it.findNavController().navigate(CategoriesFragmentDirections.actionCategoriesFragmentToCategoryDetailFragment(id = content.id, title = content.name))
+            }
         }
     }
 

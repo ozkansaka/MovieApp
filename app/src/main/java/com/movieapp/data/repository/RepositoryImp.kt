@@ -8,10 +8,6 @@ import javax.inject.Inject
 class RepositoryImp @Inject constructor(
     private val api: MovieApi
 ) : IRepository {
-    override suspend fun getDetail(id: Int): MovieResponseDto {
-        return api.getMovieDetail(id)
-    }
-
     override suspend fun getPopular(): MovieResponseDto {
         return api.getPopular()
     }
@@ -26,5 +22,13 @@ class RepositoryImp @Inject constructor(
 
     override suspend fun getCategories(): MovieResponseDto {
         return api.getCategories()
+    }
+
+    override suspend fun getDetail(id: Int): MovieResponseDto {
+        return api.getMovieDetail(id)
+    }
+
+    override suspend fun getCategoryDetail(id: Int): MovieResponseDto {
+        return api.getCategoryDetail(id)
     }
 }
