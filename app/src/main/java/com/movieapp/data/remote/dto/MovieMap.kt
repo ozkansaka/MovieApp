@@ -7,8 +7,8 @@ import com.movieapp.domain.model.Home
 
 fun MovieResponseDto.toHome(): Home {
     return Home(
-        id=id,
-        imdb=voteAverage.toString(),
+        id = id,
+        imdb = voteAverage.toString(),
         title = title,
         image = backdropPath,
         poster = posterPath,
@@ -22,8 +22,9 @@ fun MovieResponseDto.toDetail(): Detail {
         banner = backdropPath,
         description = overview,
         imdb = voteAverage.toString(),
-        genres=genres,
-        runtime=runtime,
+        genres = genres,
+        runtime = runtime,
+        cast = credits?.cast,
     )
 }
 
@@ -37,8 +38,8 @@ fun MovieResponseDto.toCategories(): Categories {
 
 fun MovieResponseDto.toCategoryDetail(): CategoryDetail {
     return CategoryDetail(
-        id=id,
-        imdb=voteAverage.toString(),
+        id = id,
+        imdb = voteAverage.toString(),
         title = title,
         image = backdropPath,
         poster = posterPath,

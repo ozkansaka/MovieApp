@@ -16,7 +16,7 @@ interface MovieApi {
     @GET("/3/movie/upcoming?api_key=e2c019e3bbc9049df7b03972b44ff529")
     suspend fun getUpcoming(): MovieResponseDto
 
-    @GET("/3/movie/{id}?api_key=e2c019e3bbc9049df7b03972b44ff529")
+    @GET("/3/movie/{id}?api_key=e2c019e3bbc9049df7b03972b44ff529&append_to_response=credits")
     suspend fun getMovieDetail(@Path("id") id: Int): MovieResponseDto
 
     @GET("/3/genre/movie/list?api_key=e2c019e3bbc9049df7b03972b44ff529")

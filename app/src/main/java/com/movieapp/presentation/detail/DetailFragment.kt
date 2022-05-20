@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.WindowInsetsControllerCompat
@@ -51,13 +52,18 @@ class DetailFragment : Fragment() {
                         uiState.detail[0].image?.let { binding.detailImage.loadImage("https://image.tmdb.org/t/p/w500$it") }
                         uiState.detail[0].banner?.let { binding.detailBanner.loadImage("https://image.tmdb.org/t/p/w500$it") }
                         binding.detailTitle.text = uiState.detail[0].title
-                        binding.detailDateAndTime.text = uiState.detail[0].runtime +" mins"
+                        binding.detailDateAndTime.text = uiState.detail[0].runtime + " mins"
                         binding.detailImdb.text = uiState.detail[0].imdb
                         binding.detailAbout.text = uiState.detail[0].description
 
                         for (i in uiState.detail[0].genres) {
                             binding.genresContainer.addView(getGenres(i.name))
                         }
+
+                        for (i in uiState.detail[0].cast!!) {
+                            binding.castContainer.addView(getCast(i.profilePath, i.name))
+                        }
+
                     }
                     uiState.isLoading -> {
                         binding.progressBar.visibility = View.VISIBLE
@@ -72,10 +78,21 @@ class DetailFragment : Fragment() {
 
     private fun getGenres(genre: String): ConstraintLayout {
         val inflater = LayoutInflater.from(context)
-
         val layout = inflater.inflate(R.layout.item_genres, null) as ConstraintLayout
         val title = layout.findViewById(R.id.genre_text) as TextView
         title.text = genre
+        return layout
+    }
+
+    private fun getCast(url: String, name: String): ConstraintLayout {
+        val inflater = LayoutInflater.from(context)
+        val layout = inflater.inflate(R.layout.item_cast, null) as ConstraintLayout
+        val title = layout.findViewById(R.id.cast_name) as TextView
+        title.text = name
+
+        val image = layout.findViewById(R.id.cast_image) as ImageView
+
+        image.loadImage("https://image.tmdb.org/t/p/w500$url")
 
         return layout
     }

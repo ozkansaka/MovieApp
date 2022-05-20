@@ -26,6 +26,8 @@ data class MovieResponseDto(
     val popularity: Double,
     @SerializedName("poster_path")
     val posterPath: String,
+    @SerializedName("profile_path")
+    val profilePath: String,
     @SerializedName("release_date")
     val releaseDate: String,
     val title: String?,
@@ -34,6 +36,9 @@ data class MovieResponseDto(
     val voteAverage: Double,
     @SerializedName("vote_count")
     val voteCount: Int,
-
     val runtime: String,
+
+    val credits: MovieResponseDto?,
+
+    val cast: List<MovieResponseDto>,
 )

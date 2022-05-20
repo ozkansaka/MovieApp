@@ -5,7 +5,7 @@ import androidx.annotation.ColorRes
 import com.movieapp.R
 import com.movieapp.di.AppModule
 
-fun ImageView.loadImage(url: String, @ColorRes placeholder: Int = R.color.fg) {
+fun ImageView.loadImage(url: String, @ColorRes placeholder: Int = R.color.bg) {
     when {
         url.isEmpty() -> return
         else ->

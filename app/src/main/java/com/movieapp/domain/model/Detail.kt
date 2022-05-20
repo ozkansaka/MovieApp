@@ -9,5 +9,6 @@ data class Detail(
     val description: String?,
     val imdb: String?,
     val genres: List<MovieResponseDto>,
-    val runtime:String?
+    val runtime:String?,
+    val cast:List<MovieResponseDto>?,
 )
