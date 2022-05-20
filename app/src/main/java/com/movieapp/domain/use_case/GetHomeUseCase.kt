@@ -1,9 +1,9 @@
-package com.movieapp.domain.use_case.get_home
+package com.movieapp.domain.use_case
 
 import com.movieapp.common.Resource
 import com.movieapp.data.remote.dto.toHome
 import com.movieapp.domain.model.HomeTypeModel
-import com.movieapp.domain.repository.HomeRepository
+import com.movieapp.domain.repository.IRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 
 class GetHomeUseCase @Inject constructor(
-    private val repository: HomeRepository
+    private val repository: IRepository
 ) {
     operator fun invoke(): Flow<Resource<List<HomeTypeModel>>> = flow {
         try {
@@ -47,7 +47,8 @@ class GetHomeUseCase @Inject constructor(
                     HomeTypeModel.Vertical(
                         id = i.id,
                         title = i.title,
-                        image = i.image
+                        image = i.image,
+                        imdb = i.imdb
                     )
                 )
 

@@ -1,24 +1,29 @@
-package com.movieapp.presentation.home
+package com.movieapp.presentation.categories
 
 import android.os.Bundle
+import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.movieapp.R
-import com.movieapp.databinding.FragmentHomeBinding
+import com.movieapp.databinding.FragmentCategoriesBinding
+import com.movieapp.presentation.home.HomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
+
 import kotlinx.coroutines.flow.collect
 
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
 
-    private val viewModel: HomeViewModel by viewModels()
+class CategoriesFragment : Fragment() {
+
+
+    private val viewModel: CategoriesViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,9 +33,11 @@ class HomeFragment : Fragment() {
         val navBar: BottomNavigationView = requireActivity().findViewById(R.id.bottomBar)
         navBar.visibility = View.VISIBLE
 
-        val binding = FragmentHomeBinding.inflate(inflater)
+        val binding = FragmentCategoriesBinding.inflate(inflater)
 
-        val adapter = HomeAdapter(requireContext())
+
+
+        val adapter = CategoriesAdapter()
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = adapter
@@ -38,13 +45,13 @@ class HomeFragment : Fragment() {
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect { uiState ->
                 when {
-                    uiState.home.isNotEmpty() -> {
-                        adapter.submitList(uiState.home)
-                        binding.homeProgressBar.visibility = View.GONE
+                    uiState.categories.isNotEmpty() -> {
+                        adapter.submitList(uiState.categories)
+                        binding.categoriesProgressBar.visibility = View.GONE
 
                     }
                     uiState.isLoading -> {
-                        binding.homeProgressBar.visibility = View.VISIBLE
+                        binding.categoriesProgressBar.visibility = View.VISIBLE
 
                     }
                     uiState.error.isNotEmpty() -> {}
@@ -56,6 +63,4 @@ class HomeFragment : Fragment() {
     }
 
 
-
 }
-

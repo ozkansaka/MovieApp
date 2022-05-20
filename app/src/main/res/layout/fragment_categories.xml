@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    tools:context=".presentation.home.HomeFragment">
+    tools:context=".presentation.categories.CategoriesFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -14,68 +14,43 @@
         android:background="@color/fg"
         android:orientation="horizontal"
         android:paddingTop="30dp"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/home_logo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/logo"
-            android:contentDescription="@string/logo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
         <TextView
-            android:id="@+id/home_title"
+            android:id="@+id/category_title"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:fontFamily="@font/helvetica_bold"
             android:gravity="center_vertical"
-            android:text="@string/ozkaflix"
+            android:text="@string/categories"
             android:textColor="@color/bold_text"
             android:textSize="20sp" />
     </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/home_scroll"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <ProgressBar
-        android:id="@+id/home_progress_bar"
+        android:id="@+id/categories_progress_bar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

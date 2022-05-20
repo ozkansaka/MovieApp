@@ -2,10 +2,8 @@ package com.movieapp.di
 
 import com.movieapp.common.Constants
 import com.movieapp.data.remote.MovieApi
-import com.movieapp.data.repository.DetailRepositoryImp
-import com.movieapp.data.repository.HomeRepositoryImp
-import com.movieapp.domain.repository.DetailRepository
-import com.movieapp.domain.repository.HomeRepository
+import com.movieapp.data.repository.RepositoryImp
+import com.movieapp.domain.repository.IRepository
 import com.squareup.picasso.Picasso
 import dagger.Module
 import dagger.Provides
@@ -17,9 +15,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
 
     @Provides
     @Singleton
@@ -48,14 +48,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideHomeRepository(api: MovieApi): HomeRepository {
-        return HomeRepositoryImp(api)
-    }
-
-    @Provides
-    @Singleton
-    fun provideDetailRepository(api: MovieApi): DetailRepository {
-        return DetailRepositoryImp(api)
+    fun provideRepository(api: MovieApi): IRepository {
+        return RepositoryImp(api)
     }
 
     @Provides
@@ -63,5 +57,8 @@ object AppModule {
     fun providePicasso(): Picasso {
         return Picasso.get()
     }
+
+
+
 
 }

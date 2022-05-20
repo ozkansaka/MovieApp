@@ -13,6 +13,7 @@ sealed class HomeTypeModel {
     data class Vertical(
         val id: Int,
         val title: String?,
-        val image: String?
+        val image: String?,
+        val imdb:String?
     ) : HomeTypeModel()
 }

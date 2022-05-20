@@ -5,20 +5,23 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/image_overlay.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/back_button.xml" value="0.1305" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1305" />
         <entry key="app/src/main/res/drawable/image_overlay.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/menu_home.xml" value="0.1305" />
         <entry key="app/src/main/res/drawable/selector_menu.xml" value="0.1305" />
         <entry key="app/src/main/res/drawable/shape_genre.xml" value="0.1305" />
         <entry key="app/src/main/res/drawable/shape_imdb.xml" value="0.1305" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3037037037037037" />
+        <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.3037037037037037" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3037037037037037" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2835897435897436" />
+        <entry key="app/src/main/res/layout/item_category.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_child.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_genres.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_horizontal.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_popular.xml" value="0.3037037037037037" />
         <entry key="app/src/main/res/layout/item_title.xml" value="0.3037037037037037" />
-        <entry key="app/src/main/res/layout/item_vertical.xml" value="0.3037037037037037" />
+        <entry key="app/src/main/res/layout/item_vertical.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.3037037037037037" />
       </map>
     </option>

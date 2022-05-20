@@ -1,5 +1,6 @@
 package com.movieapp.data.remote.dto
 
+import com.movieapp.domain.model.Categories
 import com.movieapp.domain.model.Detail
 import com.movieapp.domain.model.Home
 
@@ -22,5 +23,13 @@ fun MovieResponseDto.toDetail(): Detail {
         imdb = voteAverage.toString(),
         genres=genres,
         runtime=runtime,
+    )
+}
+
+
+fun MovieResponseDto.toCategories(): Categories {
+    return Categories(
+        id = id,
+        name = name,
     )
 }

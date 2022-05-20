@@ -3,9 +3,7 @@ package com.movieapp.presentation.detail
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.movieapp.common.Resource
-import com.movieapp.domain.use_case.get_detail.GetDetailUseCase
-import com.movieapp.domain.use_case.get_home.GetHomeUseCase
-import com.movieapp.presentation.home.HomeUiState
+import com.movieapp.domain.use_case.GetDetailUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

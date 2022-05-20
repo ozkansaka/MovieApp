@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -14,11 +13,11 @@
         android:layout_width="130dp"
         android:layout_height="180dp"
         android:adjustViewBounds="true"
+        android:background="@color/fg"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/roundImageView"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:shapeAppearanceOverlay="@style/roundImageView" />
 
     <TextView
         android:id="@+id/horizontal_title"
@@ -29,7 +28,7 @@
         android:layout_marginEnd="5dp"
         android:fontFamily="@font/helvetica"
         android:text="@string/lorem_ipsum"
-        android:textColor="@color/white"
+        android:textColor="@color/text"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/horizontal_image"
@@ -46,8 +45,7 @@
         android:fontFamily="@font/helvetica_bold"
         android:gravity="center"
         android:padding="2dp"
-        android:text="7.8"
-        android:textColor="@color/red"
+        android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

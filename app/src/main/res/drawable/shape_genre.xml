@@ -13,8 +13,8 @@
 
     <stroke
         android:width="0dp"
-        android:color="@color/black" />
+        android:color="@color/fg" />
 
-    <solid android:color="#BCFF0000"/>
+    <solid android:color="@color/box"/>
 
 </shape>

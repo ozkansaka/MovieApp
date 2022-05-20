@@ -1,19 +1,17 @@
 package com.movieapp.presentation.detail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
-import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.movieapp.R
 import com.movieapp.databinding.FragmentDetailBinding
@@ -32,6 +30,9 @@ class DetailFragment : Fragment() {
     ): View {
         val navBar: BottomNavigationView = requireActivity().findViewById(R.id.bottomBar)
         navBar.visibility = View.GONE
+
+        WindowInsetsControllerCompat(requireActivity().window, requireActivity().window.decorView).isAppearanceLightStatusBars = false
+
 
         val binding = FragmentDetailBinding.inflate(inflater)
 

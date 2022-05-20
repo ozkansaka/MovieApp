@@ -1,5 +1,6 @@
 package com.movieapp.presentation.home
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -9,7 +10,7 @@ import com.movieapp.domain.model.Home
 import com.movieapp.extensions.loadImage
 
 
-class HorizontalAdapter(dataList: List<Home>) : RecyclerView.Adapter<HorizontalAdapter.ViewHolder>() {
+class HorizontalAdapter(dataList: List<Home>,private val context: Context) : RecyclerView.Adapter<HorizontalAdapter.ViewHolder>() {
 
     private var data: List<Home> = ArrayList()
 
@@ -22,8 +23,9 @@ class HorizontalAdapter(dataList: List<Home>) : RecyclerView.Adapter<HorizontalA
         holder.bind(item)
     }
 
-    class ViewHolder(private val binding: ItemHorizontalBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemHorizontalBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Home) {
+
             item.poster?.let { binding.horizontalImage.loadImage("https://image.tmdb.org/t/p/w500$it") }
             binding.horizontalTitle.text = item.title
             binding.horizontalImdb.text = item.imdb
