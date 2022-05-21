@@ -25,4 +25,7 @@ interface MovieApi {
     @GET("/3/discover/movie?api_key=e2c019e3bbc9049df7b03972b44ff529")
     suspend fun getCategoryDetail(@Query("with_genres") id: Int): MovieResponseDto
 
+    @GET("/3/search/movie?api_key=e2c019e3bbc9049df7b03972b44ff529")
+    suspend fun getSearch(@Query("query") query: String): MovieResponseDto
+
 }

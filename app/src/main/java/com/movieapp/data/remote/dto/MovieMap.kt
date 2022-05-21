@@ -1,9 +1,6 @@
 package com.movieapp.data.remote.dto
 
-import com.movieapp.domain.model.Categories
-import com.movieapp.domain.model.CategoryDetail
-import com.movieapp.domain.model.Detail
-import com.movieapp.domain.model.Home
+import com.movieapp.domain.model.*
 
 fun MovieResponseDto.toHome(): Home {
     return Home(
@@ -43,5 +40,15 @@ fun MovieResponseDto.toCategoryDetail(): CategoryDetail {
         title = title,
         image = backdropPath,
         poster = posterPath,
+    )
+}
+
+fun MovieResponseDto.toSearch(): Search {
+    return Search(
+        id=id,
+        title = title,
+        image = backdropPath,
+        imdb = voteAverage.toString(),
+        description = overview,
     )
 }

@@ -11,4 +11,5 @@
     <string name="search">Search</string>
     <string name="categories">Categories</string>
     <string name="back_button">back_button</string>
+    <string name="sonuc_bulunamadi">Sonuç bulunamadı...</string>
 </resources>

@@ -31,4 +31,8 @@ class RepositoryImp @Inject constructor(
     override suspend fun getCategoryDetail(id: Int): MovieResponseDto {
         return api.getCategoryDetail(id)
     }
+
+    override suspend fun getSearch(query: String): MovieResponseDto {
+        return api.getSearch(query)
+    }
 }

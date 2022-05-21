@@ -10,5 +10,6 @@ interface IRepository {
     suspend fun getDetail(id: Int): MovieResponseDto
     suspend fun getCategories(): MovieResponseDto
     suspend fun getCategoryDetail(id: Int): MovieResponseDto
+    suspend fun getSearch(query: String): MovieResponseDto
 
 }

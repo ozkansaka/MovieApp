@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.movieapp.R
 import com.movieapp.databinding.FragmentCategoryDetailBinding
@@ -44,11 +45,14 @@ class CategoryDetailFragment : Fragment() {
         }
 
         val adapter = CategoryDetailAdapter()
+        adapter.stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+
         val recyclerView = binding.recyclerView
 
         recyclerView.layoutManager = GridLayoutManager(context, 2)
 
         recyclerView.adapter = adapter
+
 
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect { uiState ->

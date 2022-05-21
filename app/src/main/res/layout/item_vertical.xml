@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp"
-    android:paddingBottom="30dp">
+    android:paddingBottom="10dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/vertical_image"
@@ -30,6 +30,8 @@
         android:layout_marginEnd="5dp"
         android:fontFamily="@font/helvetica"
         android:text="@string/lorem_ipsum"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textColor="@color/text"
         android:textSize="14sp"
         android:textStyle="bold"
