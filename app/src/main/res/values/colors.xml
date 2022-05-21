@@ -15,5 +15,7 @@
 
 
     <color name="transparent">#BE886944</color>
+    <color name="blue_transparent">#0E141B</color>
+
 
 </resources>

@@ -47,7 +47,7 @@ fun MovieResponseDto.toSearch(): Search {
     return Search(
         id=id,
         title = title,
-        image = backdropPath,
+        image = posterPath,
         imdb = voteAverage.toString(),
         description = overview,
     )

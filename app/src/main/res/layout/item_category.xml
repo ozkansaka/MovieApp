@@ -6,12 +6,15 @@
 
     <TextView
         android:id="@+id/category_title"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/shape_imdb"
+        android:background="@drawable/shape_category"
         android:fontFamily="@font/helvetica_bold"
         android:gravity="center"
+        android:minWidth="150dp"
+        android:minHeight="100dp"
+        android:padding="10dp"
         android:text="@string/lorem_ipsum"
         android:textColor="@color/text"
         android:textSize="20sp"

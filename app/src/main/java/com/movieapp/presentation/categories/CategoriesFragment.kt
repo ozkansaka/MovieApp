@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.movieapp.R
@@ -39,7 +40,7 @@ class CategoriesFragment : Fragment() {
 
         val adapter = CategoriesAdapter()
         val recyclerView = binding.recyclerView
-        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager = GridLayoutManager(context, 2)
         recyclerView.adapter = adapter
 
         lifecycleScope.launchWhenStarted {
