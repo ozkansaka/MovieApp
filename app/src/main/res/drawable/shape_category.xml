@@ -15,6 +15,6 @@
         android:width="0dp"
         android:color="@color/fg" />
 
-    <solid android:color="@color/transparent"/>
+    <solid android:color="@color/fg"/>
 
 </shape>

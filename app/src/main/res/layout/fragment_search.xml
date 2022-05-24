@@ -29,7 +29,7 @@
             android:iconifiedByDefault="false"
             android:inputType="textPersonName"
             android:queryBackground="@null"
-            android:queryHint="Ara... "
+            android:queryHint="Search..."
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
